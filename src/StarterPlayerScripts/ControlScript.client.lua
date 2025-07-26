@@ -10,7 +10,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEv
 		inputEnded = false
 		while(inputEnded == false and canMoveUp()) do
 			leftPlayerPart.Position += Vector3.new(0, speed, 0)
-			task.wait(0.1)
+			task.wait(0.01)
 		end
 	end
 	local function startMoveDown(speed: number)
@@ -20,14 +20,14 @@ UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEv
 		inputEnded = false
 		while(inputEnded == false and canMoveDown()) do
 			leftPlayerPart.Position += Vector3.new(0, -speed, 0)
-			task.wait(0.1)
+			task.wait(0.01)
 		end
 	end
 
 	if input.KeyCode == Enum.KeyCode.W then
-		startMoveUp(1)
+		startMoveUp(0.5)
 	elseif input.KeyCode == Enum.KeyCode.S then
-		startMoveDown(1)
+		startMoveDown(0.5)
 	end
 end)
 
